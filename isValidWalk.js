@@ -11,30 +11,42 @@
 let arr = ['n','s','n','s','n','s','n','s','n','s']
 console.log(arr.length)
 
-
 function checklength(arr){
-  let nCount = 0;
-  console.log(nCount)
-  let sCount = 0;
-  console.log(sCount)
-  let eCount = 0;
-  console.log(eCount)
-  let wCount = 0;
-  console.log(wCount)
+  var nCount = 0;
+  var sCount = 0;
+  var eCount = 0;
+  var wCount = 0;
+
 
    if(arr.length !== 10){
      return(false)
    }
+
    else{
+      for(var i=0; i < arr.length; i++) { 
+        if(arr[i] === 'n') {
+        nCount++
+      }
+        else if(arr[i] === 's') {
+        sCount++
+      }
+        else if(arr[i] === 'e') {
+        eCount++
+      }
+        else if(arr[i] === 'w') {
+        wCount++
+      }
+    }
+     console.log([nCount, sCount, eCount, wCount])
 
-
-      // for(var i=0; i < arr.length; i++) { 
-      //   if(i == 'n') {
-      //   nCount++; 
-      // }
-
+    if(nCount === sCount && eCount === wCount){
      return(true)
-   }
-}
+    }
+    else{
+      return(false)
+    }
 
-checklength(arr);
+
+  }
+}
+checklength(arr)
